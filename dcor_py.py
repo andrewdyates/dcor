@@ -6,8 +6,6 @@ http://jpktd.blogspot.com/2012/06/non-linear-dependence-measures-distance.html
 
 NOTE: author's R implementation uses square root even though Joepy does not.
 """
-DCOR_LIB = "Numpy"
-
 def dist(x, y):
   #1d only
   return np.abs(x[:, None] - y)
@@ -18,6 +16,12 @@ def d_n(x):
   return dn
 
 def dcov_all(x, y):
+  # Coerce type to numpy array if not already of that type.
+  try: x.shape
+  except AttributeError: x = np.array(x)
+  try: y.shape
+  except AttributeError: y = np.array(y)
+  
   dnx = d_n(x)
   dny = d_n(y)
     
