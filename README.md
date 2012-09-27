@@ -11,3 +11,7 @@ the preferred implementation as it's included in this module.
 
 Cython modules require complication per computer. See
 "setup_cython.py" for compilation instructions.
+
+Included .so binary compiled to run on the osc.edu Oakley super
+computer cluster. Compiling on a new platform may overwrite this file;
+be careful on committing to the master branch in this case!
