@@ -19,7 +19,13 @@ except NameError:
 
 if DCOR_IMPLEMENTATION == "cpy":
   # 1. Cython implementation (faster, but has dependencies)
-  from dcor_cpy import *
+  try:
+    from dcor_cpy import *
+  # Handle exception in case of cython import errors in pychecker, for example.
+  except ImportError, e:
+    print "Loading numpy implementation due to import error."
+    print e
+    from dcor_py import *
 elif DCOR_IMPLEMENTATION == "py":
   # 2. Simple, 1D, numpy python implementation
   from dcor_py import *
