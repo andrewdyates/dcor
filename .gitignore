@@ -1,4 +1,10 @@
 *.py[co]
+*~
+\#*
+.\#*
+build
+build/*
+
 
 # Packages
 *.egg
