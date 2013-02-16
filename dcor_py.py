@@ -1,10 +1,8 @@
 #!/usr/bin/python
 import numpy as np
 """
-FROM:
+Derived From:
 http://jpktd.blogspot.com/2012/06/non-linear-dependence-measures-distance.html
-
-NOTE: author's R implementation uses square root even though Joepy does not.
 """
 def dist(x, y):
   #1d only
@@ -26,9 +24,9 @@ def dcov_all(x, y):
   dny = d_n(y)
     
   denom = np.product(dnx.shape)
-  dc = (dnx * dny).sum() / denom
-  dvx = (dnx**2).sum() / denom
-  dvy = (dny**2).sum() / denom
+  dc = np.sqrt((dnx * dny).sum() / denom)
+  dvx = np.sqrt((dnx**2).sum() / denom)
+  dvy = np.sqrt((dny**2).sum() / denom)
   dr = dc / (np.sqrt(dvx) * np.sqrt(dvy))
   return dc, dr, dvx, dvy
 

@@ -15,3 +15,19 @@ Cython modules require complication per computer. See
 Included .so binary compiled to run on the osc.edu Oakley super
 computer cluster. Compiling on a new platform may overwrite this file;
 be careful on committing to the master branch in this case!
+
+----
+To build on local machine:
+
+0) Install cython if it is not already installed.
+$ easy_install cython
+
+1) Remove compiled copy if it exists. (in 'dcor' package directory)
+$ rm dcor_cpy.so
+
+2) Compile dcor_cpy.pyx file
+$ python setup_cython.py build_ext --inplace
+
+3) Confirm operation in python
+$ python test.py
+

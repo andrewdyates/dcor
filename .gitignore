@@ -4,6 +4,7 @@
 .\#*
 build
 build/*
+*.so
 
 
 # Packages

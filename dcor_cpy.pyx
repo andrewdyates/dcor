@@ -40,6 +40,8 @@ For vectors of length 1000, this is about 40% faster.
 
 HOWEVER: it does not handle missing values which must be handled prior to passing
 vectors to this function.
+
+AY Feb 2013: Updated to return square root.
 """
 DCOR_LIB = "cython"
 
@@ -62,9 +64,9 @@ def dcov_all(x, y):
     dny = D_N(y)
 
     denom = float(dnx.dim * dnx.dim)
-    dc = dnx.product_sum(dny) / denom
-    dvx = dnx.squared_sum() / denom
-    dvy = dny.squared_sum() / denom
+    dc = np.sqrt(dnx.product_sum(dny) / denom)
+    dvx = np.sqrt(dnx.squared_sum() / denom)
+    dvy = np.sqrt(dny.squared_sum() / denom)
     dr = dc / (np.sqrt(dvx) * np.sqrt(dvy))
     return dc, dr, dvx, dvy
 
