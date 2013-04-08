@@ -70,6 +70,8 @@ def dcov_all(x, y):
     dr = dc / (np.sqrt(dvx) * np.sqrt(dvy))
     return dc, dr, dvx, dvy
 
+def dcor(x,y):
+    return dcov_all(x,y)[1]
 
 class D_N: 
     """Inner helper of dcov_all. Cache different means that are required for calculating 
