@@ -5,6 +5,7 @@
 build
 build/*
 *.so
+*.c
 
 
 # Packages
