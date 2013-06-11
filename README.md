@@ -23,7 +23,7 @@ To build on local machine:
 $ easy_install cython
 
 1) Remove compiled copy if it exists. (in 'dcor' package directory)
-$ rm dcor_cpy.so
+$ rm dcor_cpy.so dcor_cpy.c
 
 2) Compile dcor_cpy.pyx file
 $ python setup_cython.py build_ext --inplace
