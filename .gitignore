@@ -5,6 +5,7 @@
 build
 build/*
 *.so
+.DS*
 
 
 # Packages
