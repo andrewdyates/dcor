@@ -31,4 +31,4 @@ def dcov_all(x, y):
   return dc, dr, dvx, dvy
 
 def dcor(x,y):
-  return dcov_all(x,y)[2]
+  return dcov_all(x,y)[1]
